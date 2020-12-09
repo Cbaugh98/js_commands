@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\js-basics"
+		},
+		{
+			"path": "..\\HelloWorld"
+		},
+		{
+			"path": "..\\puppeter"
+		},
+		{
+			"path": "..\\csv test"
+		},
+		{
+			"path": "..\\..\\final"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "jsbot_commands"
+	}
+}
