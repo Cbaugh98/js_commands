@@ -17,9 +17,15 @@
 		},
 		{
 			"path": "..\\..\\final"
+		},
+		{
+			"path": "..\\..\\twink present"
+		},
+		{
+			"path": "..\\..\\David"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "jsbot_commands"
+		"liveServer.settings.multiRootWorkspaceName": "HelloWorld"
 	}
 }

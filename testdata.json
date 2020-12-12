@@ -1,0 +1,100 @@
+{
+    
+        "AllStats" :[
+        {
+            "name" : "main",
+            "rectangle" : {"top" : 183,
+            "left" : 64,
+            "width" : 311,
+            "height" : 301
+        }}],
+        "Team1" : [
+            {
+                "name" : "orisa",
+                "rectangle" : {"top" : 181,
+                "left" : 66,
+                "width" : 237,
+                "height" : 30
+                }
+            },
+            {
+                "name" : "Sigma",
+                "rectangle" : {"top" : 207,
+                "left" : 66,
+                "width" : 237,
+                "height" : 30
+            }},
+            {
+                "name" : "Ashe",
+                "rectangle" : {"top" : 232,
+                "left" : 66,
+                "width" : 237,
+                "height" : 30
+            }},
+            {
+                "name" : "76",
+                "rectangle" : {"top" : 258,
+                "left" : 35,
+                "width" : 237,
+                "height" : 30
+            }},
+            {
+                "name" : "zen",
+                "rectangle" : {"top" : 280,
+                "left" : 35,
+                "width" : 237,
+                "height" : 30
+            }},
+            {
+                "name" : "bap",
+                "rectangle" : {"top" : 307,
+                "left" : 35,
+                "width" : 237,
+                "height" : 30
+            }}
+        ],
+        "Team2" : [
+                {
+                    "name" : "bap",
+                    "rectangle" : {"top" : 332,
+                    "left" : 35,
+                    "width" : 237,
+                    "height" : 30
+                }},
+                {
+                    "name" : "Mercy",
+                    "rectangle" : {"top" : 356,
+                    "left" : 35,
+                    "width" : 237,
+                    "height" : 30
+                }},
+                {
+                    "name" : "Sig",
+                    "rectangle" : {"top" : 384,
+                    "left" : 35,
+                    "width" : 237,
+                    "height" : 30
+                }},
+                {
+                    "name" : "phara",
+                    "rectangle" : {"top" : 406,
+                    "left" : 35,
+                    "width" : 237,
+                    "height" : 30
+                }},
+                {
+                    "name" : "orisa",
+                    "rectangle" : {"top" : 430,
+                    "left" : 35,
+                    "width" : 237,
+                    "height" : 30
+                }},
+                {
+                    "name" : "bastion",
+                    "rectangle" : {"top" : 465,
+                    "left" : 35,
+                    "width" : 237,
+                    "height" : 30
+                }}
+            ] 
+}
