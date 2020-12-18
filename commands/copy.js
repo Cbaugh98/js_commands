@@ -2,14 +2,14 @@ const { Message, MessageAttachment, Channel } = require("discord.js");
 const {Tesseract} = require('tesseract.js');
 module.exports = {
 	name: 'copy',
-	description: 'copys message and paste message in a specific channel',
+	description: 'copys attachment url and paste url',
 	async execute(message,args) {
 		try{
             const attachMap = message.attachments;
 			const file = attachMap.get(attachMap.firstKey());
-			message.channel.send(file.size/1000 + "kb");
+			message.channel.send(file.url);
 		} catch(error) {
-			console.log(error);
+			console.error(error);
 		}
 	}
 };

@@ -22,17 +22,17 @@ let allStats = [];
 AllStats.forEach(hero => {
   allStats[0] = hero.rectangle;
 });
-//image editing
+// //image editing
 
-  await Jimp.read(file)
-  .then(image => {
-    return image
-    .posterize(10);
-  })
-  .catch(err => {
-    console.error(err);
-  });
-const nfile = await fs.readFileSync('./edited/image.jpg');
+//   await Jimp.read(file)
+//   .then(image => {
+//     return image
+//     .posterize(10);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//   });
+// const nfile = await fs.readFileSync('./edited/image.jpg');
 
 
 
@@ -75,5 +75,5 @@ async function readText(rectangles,image) {
   console.log(results.map(r => r.data.text));
   await scheduler.terminate(); // It also terminates all workers.
 };
-readText(allStats,nfile);
+readText(rectangles,file);
 })();

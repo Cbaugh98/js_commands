@@ -1,9 +1,14 @@
 module.exports = {
 	name: 'lol',
-	description: 'Stats for leauge',
+	description: 'no longer practical',
 	execute(message, args) {
-        message.channel.send(args);
-		name: args[0];
+		/**
+		 * 
+		 */
+
+		args[0] = username;
+		args[1] = matchName;
+		
 		
 	},
 };

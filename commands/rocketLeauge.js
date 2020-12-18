@@ -1,7 +1,6 @@
-const { Client, MessageAttachment } = require('discord.js');
 module.exports = {
 	name: 'rl',
-	description: 'returns ballchasing stats page',
+	description: 'returns Rocketleauge Stat information',
     async execute(message, args) {
         console.log(typeof args[0]);
         const preid = args[0].replace('https://ballchasing.com/replay/', '');

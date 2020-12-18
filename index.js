@@ -16,7 +16,7 @@ const config = {
   owner : process.env.OWNER
 };
 /////////////////////////////////
-// // Imports the Google Cloud client library.
+// Imports the Google Cloud client library.
 // const {Storage} = require('@google-cloud/storage');
 
 // // Instantiates a client. Explicitly use service account credentials by
@@ -42,7 +42,33 @@ const config = {
 // listBuckets();
 ////////////////////////////////////////////////////////////////
 
-const Tesseract = require("tesseract.js");
+const {createWorker,createScheduler} = require("tesseract.js");
+try {
+  const scheduler = createScheduler();
+  const workers= {};
+  for(let i = 0; i < 4; i++){
+     workers[`w${i}`] = createWorker({
+      logger: m => console.log(m),
+    });
+  }
+  (async () => {
+    for(const w in workers) {
+      await w.load();
+      await w.loadLanguage('eng');
+      await w.initialize('eng');
+      await w.setParameters({
+        tessedit_char_whitelist : '0123456789-',
+        tessedit_pageseg_mode	: '12',
+    })
+      await scheduler.addWorker(w);
+    }
+    console.log('workersScheduled');
+  })
+} catch(err){
+  console.error(err);
+  console.log('nope');
+}
+
 
 
 /////////////////////////////creates command handling
@@ -59,21 +85,19 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-
 });
     
 client.on('message', async message => {
+  
     const args = await message.content.slice(config.prefix.length).trim().split(/ +/);
     const command = await args.shift().toLowerCase();
     if (!client.commands.has(command)) return;
     try {
-     await client.commands.get(command).execute(message, args)
-     .then(function(value) {return value;}).catch(function(error) {return console.log(error)});
+     await client.commands.get(command).execute(message, args);
     } catch (error) {
       console.log(error);
-      message.reply('<:pOg:778808585202434068>');
-    } finally
-    {message.channel.send(`:^)`);}
+      message.channel.send('Their was an error make sure you put the command in correctly');
+    }
  });
 
 client.login();
