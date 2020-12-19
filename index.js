@@ -1,6 +1,3 @@
-
-
-
 //fs is the node files system allows me to export new stuff
 const fs = require('fs');
 require('dotenv').config(); //testing this
@@ -10,12 +7,14 @@ const client = new Discord.Client();
 ///////////////////////////////////end
 
 
+
 ////////////////////////////.env
 const config = {
   prefix : process.env.PREFIX,
   owner : process.env.OWNER
 };
 /////////////////////////////////
+//Abandoned idea
 // Imports the Google Cloud client library.
 // const {Storage} = require('@google-cloud/storage');
 
@@ -43,31 +42,31 @@ const config = {
 ////////////////////////////////////////////////////////////////
 
 const {createWorker,createScheduler} = require("tesseract.js");
-try {
-  const scheduler = createScheduler();
-  const workers= {};
-  for(let i = 0; i < 4; i++){
-     workers[`w${i}`] = createWorker({
-      logger: m => console.log(m),
-    });
-  }
-  (async () => {
-    for(const w in workers) {
-      await w.load();
-      await w.loadLanguage('eng');
-      await w.initialize('eng');
-      await w.setParameters({
-        tessedit_char_whitelist : '0123456789-',
-        tessedit_pageseg_mode	: '12',
-    })
-      await scheduler.addWorker(w);
-    }
-    console.log('workersScheduled');
-  })
-} catch(err){
-  console.error(err);
-  console.log('nope');
-}
+// try {
+//   const scheduler = createScheduler();
+//   const workers= {};
+//   for(let i = 0; i < 4; i++){
+//      workers[`w${i}`] = createWorker({
+//       logger: m => console.log(m),
+//     });
+//   }
+//   (async () => {
+//     for(const w in workers) {
+//       await w.load();
+//       await w.loadLanguage('eng');
+//       await w.initialize('eng');
+//       await w.setParameters({
+//         tessedit_char_whitelist : '0123456789-',
+//         tessedit_pageseg_mode	: '12',
+//     })
+//       await scheduler.addWorker(w);
+//     }
+//     console.log('workersScheduled');
+//   })
+// } catch(err){
+//   console.error(err);
+//   console.log('nope');
+// }
 
 
 
@@ -79,11 +78,11 @@ for (const file of commandFiles) {
 
 	// set a new item in the Collection
 	// with the key as the command name and the value as the exported module
-	client.commands.set(command.name, command);
+  client.commands.set(command.name, command);
 }
 /////////////////////////////end of commmand handling
 
-client.on('ready', () => {
+client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
     

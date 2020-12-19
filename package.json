@@ -16,6 +16,7 @@
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
     "jimp": "^0.16.1",
+    "opgg-scrape": "^1.0.3",
     "tesseract.js": "^2.1.4"
   },
   "devDependencies": {
